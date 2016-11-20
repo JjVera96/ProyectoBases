@@ -4,16 +4,23 @@
 	if(!isset($_POST["btnSubmit"])){
 		$usuario = $_POST["Codigo"];
 		$pass = $_POST["Contra"];
-		echo "$usuario $pass<br>";
 		$consulta = mysqli_query($conexion, "SELECT Codigo, Contra, Cargo FROM personal WHERE Codigo = $usuario and Contra = $pass");
-		$result = mysqli_fetch_row($consulta);
+		
+		while($result = mysqli_fetch_row($consulta)){
+			$vista = $result[2];
+		}
 
-		if(strcmp($result[2],"Administrador")){
-			echo "Has Ingresado Como Admin<br>";
-		}elseif (strcmp($result[2],"Empleado")) {
-			echo "Has Ingreado Como Empleado<br>";
+		if(!empty($vista)){
+			if(!strcmp($vista, "Administrador")){
+				echo "Administrador";
+			}
+
+			if(!strcmp($vista, "Empleado")){
+				echo "Empleado";
+			}
 		}else{
-			echo "Error Grandisimo<br>";
+			echo "Datos Erroneos";
 		}
 	}
+
 ?>
