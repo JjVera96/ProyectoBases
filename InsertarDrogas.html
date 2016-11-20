@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Formulario Ingreso Medicamentos</title>
+	<body background ="Medicamentos.jpg">
+	<link rel="stylesheet" href="styleingreso.css">	
+</head>
+<body>
+	<form class="Medicamento">
+		<fieldset>
+			<legend align="center" type="text">Datos Medicamentos</legend><br><br>
+
+			<center><div><label for="codigo">Codigo</label><br>
+			<input name="codigo" id="codigo" type="number"><br><br></div>
+
+			<div><label for="nombre">Nombre</label><br>
+			<input name="nombre" id="nombre" type="text"><br><br></div>
+
+			<div><label for="fabricante">Fabricante</label><br>
+			<input name="fabricante" id="fabricante" type="text"><br><br></div>
+
+			<div><label for="presentacion">Presentación</label><br>
+			<select name="presentacion" id="presentacion">
+				<option value="">Selecciona el tipo de Medicamento</option>
+				<option value="inyeccion">Inyección</option>
+				<option value="capsula">Capsula</option>
+				<option value="ampolla">Ampolla</option>
+
+			</select><br><br></div>
+
+			<div><label for="fecha_venc">Fecha de Vencimiento</label><br>
+			<input name="fecha_venc" id="fecha_venc" type="date"><br><br></div>
+
+			<div><label for="precio">Precio</label><br>
+			<input name="precio" id="precio" type="number"><br><br></div>
+
+			<div><label for="disponibilidad">Disponibilidad</label><br>
+			<input name="disponibilidad" id="disponibilidad" type="number"><br><br></div>
+
+			<div><label for="cod_prov">Código Proveedor</label><br>
+			<input name="cod_prov" id="cod_prov" type="number"><br><br></div>
+
+			<div><label for="formula">¿Necesita formula?</label><br>
+			<select name="formula" id="formula">
+				<option value="">Selecciona si es necesaria la formula</option>
+				<option value="si">Sí</option>
+				<option value="no">No</option>
+
+			</select><br><br></div>
+
+			<div><input type="submit" value="Insertar Medicamento"><br><br></div>
+			</center>
+		</fieldset>
+		</form>
+</body>
+</html>
