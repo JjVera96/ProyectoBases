@@ -47,11 +47,7 @@
 					$_SESSION["usuario_valido"] = 2;
 					header('Location: index.php');
 				}
-			}else{
-				echo "<h1 id='Error'>Usuario y/o contraseña incorrecta</h1>";
 			}
-		}else{
-			echo "<h1 id='Error>Usuario y/o contraseña incorrecta</h1>";
 		}
 	}
 ?>
