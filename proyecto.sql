@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2016 a las 17:57:00
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 7.0.9
+-- Tiempo de generación: 21-11-2016 a las 00:16:54
+-- Versión del servidor: 5.7.14
+-- Versión de PHP: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -61,7 +61,7 @@ CREATE TABLE `pedido` (
 
 CREATE TABLE `personal` (
   `Codigo` int(20) NOT NULL,
-  `Contra` int(4) NOT NULL,
+  `Contra` varchar(4) NOT NULL,
   `Primer Nombre` varchar(15) NOT NULL,
   `Segundo Nombre` varchar(15) DEFAULT NULL,
   `Primer Apellido` varchar(15) NOT NULL,
@@ -75,8 +75,8 @@ CREATE TABLE `personal` (
 --
 
 INSERT INTO `personal` (`Codigo`, `Contra`, `Primer Nombre`, `Segundo Nombre`, `Primer Apellido`, `Segundo Apellido`, `Fecha Nacimiento`, `Cargo`) VALUES
-(1087559573, 1996, 'Juan', 'Jose', 'Vera', 'Arango', '1996-11-07', 'Administrador'),
-(1088016836, 1993, 'Jhon', 'Albert', 'Arango', 'Duque', '1993-07-19', 'Empleado');
+(1087559573, '1996', 'Juan', 'Jose', 'Vera', 'Arango', '1996-11-07', 'Administrador'),
+(1088016836, '1993', 'Jhon', 'Albert', 'Arango', 'Duque', '1993-07-19', 'Empleado');
 
 -- --------------------------------------------------------
 
