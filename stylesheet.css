@@ -6,7 +6,7 @@ body{
 }
 
 header hgroup h1{
-	font-size: 60px;
+	font-size: 80px;
 	color: #0080FF;
 	margin: 0 auto;
 	font-family: 'Ranga', cursive;
@@ -20,14 +20,14 @@ header hgroup h1{
 	margin: 0 auto;
 	background-color: #0080FF;
 	border-radius: 7px;
-	width: 840px;
+	width: 850px;
 	height: 70px;
 }
 
 nav ul li{
 	display: inline-block;
 	margin-top: 7px;
-	margin-right: 1px;
+	margin-right: 5px;
 	cursor: pointer;
 	border-radius: 5px;
 	background-color: white;

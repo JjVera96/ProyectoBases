@@ -24,14 +24,16 @@
 		<div id='Menu'>
 			<nav>
 				<ul>
-					<li><a href='index.php'>Inicio</a></li>
-					<li><a href='ventas.php'>Ventas</a></li>
-					<li><a href='buscar.php'>Buscar</a></li>
-					<li><a href='listar.php'>Listar</a></li>
-					<li><a href='insertar.php'>Ingresar</a></li>
-					<li><a href='eliminar.php'>Eliminar</a></li>
-					<li><a href='actualizar.php'>Actualizar</a></li>
-					<li><a href='cerrar.php'>Cerrar</a></li>
+					<?php
+					echo "<li><a href='index.php'>Inicio</a></li>";
+					echo "<li><a href='ventas.php'>Ventas</a></li>";
+					echo "<li><a href='buscar.php'>Buscar</a></li>";
+					echo "<li><a href='listar.php'>Listar</a></li>";
+					echo "<li><a href='insertar.php'>Ingresar</a></li>";
+					echo "<li><a href='eliminar.php'>Eliminar</a></li>";
+					echo "<li><a href='actualizar.php'>Actualizar</a></li>";
+					echo "<li><a href='cerrar.php'>Cerrar</a></li>";
+					?>
 				</ul>
 			</nav>
 		</div>
