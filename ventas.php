@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>index - Droguerias FerJo</title>
+	<title>ventas - Droguerias FerJo</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Ranga" rel="stylesheet">		
@@ -38,15 +38,6 @@
 		</div>
 	</header>
 	<section>
-		<div id='textoID'>
-			<article>
-				<hgroup>
-				<h1>Bienvenido al aplicatico de Drogueria FerJo</h1>
-				</hgroup>
-				<img src="Recursos/index.jpg">
-				<p>Aplicativo para llevar la base de datos de la Drogueria</p>
-			</article>
-		</div>
 	</section>
 </div>
 </body>

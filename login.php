@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Login</title>
+	<title>login - Droguerias FerJo</title>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Ranga" rel="stylesheet">		
 	<link rel="stylesheet" href="stylesheet.css">
@@ -25,7 +25,7 @@
 	</form>
 </div>
 <?php
-	require("Conexion.php");
+	require("conexion.php");
 
 	if(!isset($_POST["btnSubmit"]) and isset($_POST["Codigo"]) and isset($_POST["Contra"])){
 			$usuario = $_POST["Codigo"];

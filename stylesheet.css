@@ -9,11 +9,7 @@ header hgroup h1{
 	font-size: 60px;
 	color: #0080FF;
 	margin: 0 auto;
-}
-
-#Error{
-	color: red;
-	text-align: center;
+	font-family: 'Ranga', cursive;
 }
 
 #Contenido{
