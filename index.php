@@ -44,7 +44,9 @@
 				<h1>Bienvenido al aplicatico de Drogueria FerJo</h1>
 				</hgroup>
 				<img src="Recursos/index.jpg">
-				<p>Aplicativo para llevar la base de datos de la Drogueria</p>
+				<?php 
+				echo "<br>Has ingresado como " . $_SESSION["Primer_Nombre"] . " " . $_SESSION["Primer_Apellido"];
+				?>
 			</article>
 		</div>
 	</section>

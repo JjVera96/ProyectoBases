@@ -29,22 +29,30 @@
 
 	if(!isset($_POST["btnSubmit"]) and isset($_POST["Codigo"]) and isset($_POST["Contra"])){
 			$usuario = $_POST["Codigo"];
-			$pass = $_POST["Contra"];			
-		$consulta = mysqli_query($conexion, "SELECT Codigo, Contra, Cargo FROM personal WHERE Codigo = $usuario and Contra = $pass");
+			$pass = $_POST["Contra"];
+			$consulta = mysqli_query($conexion, "SELECT Codigo, Contra, Cargo, Primer_Nombre, Primer_Apellido FROM personal WHERE Codigo = $usuario and Contra = $pass");
 		
 		if(!empty($consulta)){
 			while($result = mysqli_fetch_row($consulta)){
 				$vista = $result[2];
+				$pn = $result[3];
+				$pa = $result[4];
 			}
 
 			if(!empty($vista)){
 				if(!strcmp($vista, "Administrador")){
 					$_SESSION["usuario_valido"] = 1;
+					$_SESSION["Codigo"] = $usuario;
+					$_SESSION["Primer_Nombre"] = $pn;
+					$_SESSION["Primer_Apellido"] = $pa;
 					header('Location: index.php');
 				}
 
 				if(!strcmp($vista, "Empleado")){
 					$_SESSION["usuario_valido"] = 2;
+					$_SESSION["Codigo"] = $usuario;
+					$_SESSION["Primer_Nombre"] = $pn;
+					$_SESSION["Primer_Apellido"] = $pa;
 					header('Location: index.php');
 				}
 			}
