@@ -2,17 +2,19 @@ legend
 {
     color: #00008B;
 	font-size: xx-large;
+	font-family: 'Gloria Hallelujah', cursive;
 }
 
 body{
 	width: 600px;
 	margin: auto;
 	background-color: #E2ECEE;
+	font-family: 'Gloria Hallelujah', cursive;
 }
 
 
 form {
-	background-image: url("Medicamentos.jpg");
+	background-image: url("Recursos/Medicamentos.jpg");
 }
 
 
