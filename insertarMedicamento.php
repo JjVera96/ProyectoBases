@@ -73,7 +73,7 @@
 		<div id="formInsertar">
 		<header>
 			<hgroup>
-			<h2>Nuevo Empleado</h2>
+			<h2>Nuevo Medicamento</h2>
 			</hgroup>
 		</header>
 		<form action="insertarMedicamento.php" method="post">
