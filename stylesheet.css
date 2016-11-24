@@ -49,11 +49,12 @@ nav ul li{
 }
 
 nav ul li:hover{
-	background-color: #c6c2c2;
+	background-color: #07ed07;
 }
 
 nav ul li a{
 	text-decoration: none;
+	color: #b709ba;
 }
 
 nav ol{
@@ -172,4 +173,28 @@ select:focus{
 #Error{
 	text-align: center;
 	color: red;
+}
+
+table{
+	margin: 0 auto;
+	margin-top: 50px;
+	border: 5px solid white;
+	border-radius: 7px;
+	border-collapse: collapse;
+}
+
+table td{
+	border-radius: 7px;
+	border: 1px solid white;
+	padding: 10px;
+	width: 150px;
+}
+
+table tr:hover{
+	background-color: #0080FF;
+}
+
+table td:hover{
+	color: red;
+	font-weight: bold;
 }
