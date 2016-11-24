@@ -39,37 +39,66 @@
 		</div>
 	</header>
 	<section>
-		<div id='menuInsertar'>
-			<div id='opcion'> 
+		<div id='menuInsertarRecortado'>
+			<div id='opcionRecortada'> 
 			<article>
 			<nav>
 				<ol>
 				<li><a href="insertarMedicamento.php">Medicamento</a></li>
 				</ol>
-				<a href="insertarMedicamento.php"><img src="Recursos/medicamentos.jpg" width="150" height="150"></a>
 			</nav>
 			</article>
 			</div>
-			<div id='opcion'>
+			<div id='opcionRecortada'>
 			<article>
 			<nav>
 				<ol>
 				<li><a href="insertarEmpleado.php">Empleado</a></li>
 				</ol>
-				<a href="insertarEmpleado.php"><img src="Recursos/empleado.jpg" width="150" height="150"></a>
 			</nav>
 			</article>
 			</div>
-			<div id='opcion'>
+			<div id='opcionRecortada'>
 			<article>
 			<nav>
 				<ol>
 				<li><a href="insertarProveedor.php">Proveedor</a></li>
 				</ol>
-				<a href="insertarProveedor.php"><img src="Recursos/proveedor.jpg" width="150" height="150"></a>
 			</nav>
 			</article>
 			</div>
+		</div>
+	</section>
+	<section>
+		<div id="formInsertar">
+		<header>
+			<hgroup>
+			<h2>Nuevo Empleado</h2>
+			</hgroup>
+		</header>
+		<form action="insertarProveedor.php" method="post">
+		<label>Primer Nombre</label>
+		<input type="text" name="pnom" id="pnom" placeholder="Primer Nombre" required>
+		<label>Segundo Nombre</label>
+		<input type="text" name="snom" id="snom" placeholder="Segundo Nombre" required>
+		<label><br>Primer Apellido</label>
+		<input type="text" name="pape" id="pape" placeholder="Primer Apellido" required>
+		<label>Segundo Apellido</label>
+		<input type="text" name="sape" id="sape" placeholder="Segundo Apellido" required>
+		<label><br>Fecha de Nacimiento</label>
+		<input type="date" name="fechanac" id="fechanac" placeholder="aaaa-mm-dd" required>
+		<label><br>Cargo</label>
+		<select name="cargo" id="cargo">
+			<option value="">Cargo</option>
+			<option value="Administrador">Administrador</option>
+			<option value="Empleado">Empleado</option>
+		</select>
+		<label><br>Codigo</label>
+		<input type="number" name="codigo" id="codigo" placeholder="Codigo" required>
+		<label><br>Contraseña</label>
+		<input type="number" name="pass" id="pass" placeholder="Contraseña" required><br><br>
+		<input type="submit" value="Enviar Datos" id="btnSubmit">
+		</form>
 		</div>
 	</section>
 </div>

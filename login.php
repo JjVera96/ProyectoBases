@@ -19,15 +19,15 @@
 		</hgroup>
 	</header>
 	<form action="login.php" method="post">
-		<input type="text" name="Codigo" id="Codigo" placeholder="Usuario" required>
-		<input type="password" name="Contra" id="Contra" placeholder="Contraseña" required>
-		<input type="submit" value="   Entrar   " id="btnSubmit">
+		<input type="text" name="Codigo" id="Codigo" placeholder="Usuario" required><br>
+		<input type="password" name="Contra" id="Contra" placeholder="Contraseña" required><br>
+		<input type="submit" value="   Entrar   " name="btnSubmit" id="btnSubmit">
 	</form>
 </div>
 <?php
 	require("conexion.php");
 
-	if(!isset($_POST["btnSubmit"]) and isset($_POST["Codigo"]) and isset($_POST["Contra"])){
+	if(isset($_POST["btnSubmit"]) and isset($_POST["Codigo"]) and isset($_POST["Contra"])){
 			$usuario = $_POST["Codigo"];
 			$pass = $_POST["Contra"];
 			$consulta = mysqli_query($conexion, "SELECT Codigo, Contra, Cargo, Primer_Nombre, Primer_Apellido FROM personal WHERE Codigo = $usuario and Contra = $pass");

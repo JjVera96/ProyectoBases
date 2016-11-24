@@ -16,7 +16,7 @@
 <div id='Contenido'>
 	<header>
 		<hgroup>
-		<h1>Droguerias FerJo</h1>
+		<h1><a href="index.php">Droguerias FerJo</a></h1>
 		</hgroup>
 		<div id='Menu'>
 			<nav>

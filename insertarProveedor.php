@@ -39,12 +39,12 @@
 		</div>
 	</header>
 	<section>
-		<div id='menuInsertar'>
+		<div id='menuInsertarRecortado'>
 			<div id='opcionRecortada'> 
 			<article>
 			<nav>
 				<ol>
-				<li><a href="">Medicamento</a></li>
+				<li><a href="insertarMedicamento.php">Medicamento</a></li>
 				</ol>
 			</nav>
 			</article>
@@ -53,7 +53,7 @@
 			<article>
 			<nav>
 				<ol>
-				<li><a href="">Empleado</a></li>
+				<li><a href="insertarEmpleado.php">Empleado</a></li>
 				</ol>
 			</nav>
 			</article>
@@ -62,7 +62,7 @@
 			<article>
 			<nav>
 				<ol>
-				<li><a href="">Proveedor</a></li>
+				<li><a href="insertarProveedor.php">Proveedor</a></li>
 				</ol>
 			</nav>
 			</article>
@@ -77,11 +77,11 @@
 			</hgroup>
 		</header>
 		<form action="insertarProveedor.php" method="post">
-			<label>Codigo</label>
+			<label>Codigo<br></label>
 			<input type="number" name="Codigo" id="Codigo" placeholder="Codigo Proveedor" required>
-			<label>Nombre Proveedor</label>
-			<input type="text" name="Nombre" id="Nombre" placeholder="Nombre Proveedor">
-			<br><input type="submit" value="Enviar Datos" name="btnSumbit"><br>
+			<label><br>Nombre Proveedor<br></label>
+			<input type="text" name="Nombre" id="Nombre" placeholder="Nombre Proveedor"><br>
+			<br><input type="submit" value="Enviar Datos" id="btnSubmit"><br>
 		</form>
 		</div>
 	</section>

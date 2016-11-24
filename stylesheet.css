@@ -1,5 +1,5 @@
 body{
-	background-color: #1A1616;	
+	background-color: #1A1616;
 	font-family: 'Gloria Hallelujah', cursive;
 	font-size: 20px;
 	color: #FFF;
@@ -10,6 +10,11 @@ header hgroup h1{
 	color: #0080FF;
 	margin: 0 auto;
 	font-family: 'Ranga', cursive;
+}
+
+header hgroup h1 a{
+	text-decoration: none;
+	color: #0080FF;
 }
 
 #Contenido{
@@ -24,6 +29,10 @@ header hgroup h1{
 	height: 70px;
 }
 
+nav ul{
+	list-style-type: none;
+}
+
 nav ul li{
 	display: inline-block;
 	margin-top: 7px;
@@ -31,20 +40,49 @@ nav ul li{
 	cursor: pointer;
 	border-radius: 5px;
 	background-color: white;
-	color: #1d1d1d;
-	border: 20px;
 	padding: 8px;
 	font-weight: bold;
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linea
 }
 
 nav ul li:hover{
-	background-color: #A69F9F;
-	border-radius: 7px;
-	font-weight: bold;
+	background-color: #c6c2c2;
 }
 
 nav ul li a{
 	text-decoration: none;
+}
+
+nav ol{
+	list-style-type: none;
+}
+
+nav ol li{
+	margin: 0 auto;
+	cursor: pointer;
+	border-radius: 7px;
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linea
+}
+
+nav ol li:hover{
+	font-weight: bold;
+	background-color: #1A1616;
+}
+
+nav ol li a{
+	text-decoration: none;
+	color: white;
+}
+
+nav ol li a:focus{
+	color: red;
+	background-color: 
 }
 
 img{
@@ -52,10 +90,8 @@ img{
 }
 
 input{
-	color: white;
 	font-weight: bold;
 	border: none;
-	display: block;
 	margin: 0 auto;
 	margin-top: 5px;
 	border-radius: 7px;
@@ -72,4 +108,58 @@ input:focus{
 #btnSubmit{
 	cursor: pointer;
 	color: #B2AEAE;
+}
+
+#menuInsertar{
+	margin: 0 auto;
+	margin-top: 20px;
+	background-color: #0080FF; 
+	border-radius: 7px;
+	width: 850px;
+	height: 300px
+}
+
+#menuInsertarRecortado{
+	margin: 0 auto;
+	margin-top: 20px;
+	background-color: #0080FF; 
+	border-radius: 7px;
+	width: 850px;
+	height: 80px
+}
+
+#opcion{
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 200px;
+	height: 250px;
+	display: inline-block;
+	background-color: #1A1616;
+	border-radius: 7px;
+}
+
+#opcionRecortada{
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 200px;
+	height: 60px;
+	display: inline-block;
+	border-radius: 7px;
+}
+
+select{
+	font-weight: bold;
+	border: none;
+	margin: 0 auto;
+	margin-top: 5px;
+	border-radius: 7px;
+	height: 40px;
+	background-color: #434141;
+	color: #1c1c1c;
+}
+
+select:focus{
+	outline-color: rgba(0,0,0,0);
+	background: rgba(255,255,255,.95);
+	color: #0080FF;
 }

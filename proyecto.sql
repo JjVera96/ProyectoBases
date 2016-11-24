@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2016 a las 00:16:54
+-- Tiempo de generación: 24-11-2016 a las 08:25:38
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -32,7 +32,7 @@ CREATE TABLE `drogas` (
   `Fabricante` varchar(15) NOT NULL,
   `Presentacion` varchar(15) NOT NULL,
   `Tipo` varchar(15) NOT NULL,
-  `Fecha Vencimiento` date NOT NULL,
+  `Fecha_Vencimiento` date NOT NULL,
   `Precio` int(20) NOT NULL,
   `Disponibilidad` int(10) NOT NULL,
   `Cod_Proveedor` int(15) NOT NULL,
@@ -61,12 +61,12 @@ CREATE TABLE `pedido` (
 
 CREATE TABLE `personal` (
   `Codigo` int(20) NOT NULL,
-  `Contra` varchar(4) NOT NULL,
-  `Primer Nombre` varchar(15) NOT NULL,
-  `Segundo Nombre` varchar(15) DEFAULT NULL,
-  `Primer Apellido` varchar(15) NOT NULL,
-  `Segundo Apellido` varchar(15) NOT NULL,
-  `Fecha Nacimiento` date NOT NULL,
+  `Contra` int(4) NOT NULL,
+  `Primer_Nombre` varchar(15) NOT NULL,
+  `Segundo_Nombre` varchar(15) DEFAULT NULL,
+  `Primer_Apellido` varchar(15) NOT NULL,
+  `Segundo_Apellido` varchar(15) NOT NULL,
+  `Fecha_Nacimiento` date NOT NULL,
   `Cargo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -74,9 +74,18 @@ CREATE TABLE `personal` (
 -- Volcado de datos para la tabla `personal`
 --
 
-INSERT INTO `personal` (`Codigo`, `Contra`, `Primer Nombre`, `Segundo Nombre`, `Primer Apellido`, `Segundo Apellido`, `Fecha Nacimiento`, `Cargo`) VALUES
-(1087559573, '1996', 'Juan', 'Jose', 'Vera', 'Arango', '1996-11-07', 'Administrador'),
-(1088016836, '1993', 'Jhon', 'Albert', 'Arango', 'Duque', '1993-07-19', 'Empleado');
+INSERT INTO `personal` (`Codigo`, `Contra`, `Primer_Nombre`, `Segundo_Nombre`, `Primer_Apellido`, `Segundo_Apellido`, `Fecha_Nacimiento`, `Cargo`) VALUES
+(1087559573, 1996, 'Juan', 'Jose', 'Vera', 'Arango', '1996-11-07', 'Administrador'),
+(1088016836, 1993, 'Jhon', 'Albert', 'Arango', 'Duque', '1993-07-19', 'Empleado'),
+(1088032142, 1997, 'Juan', 'Sebastian', 'Calvo', 'Usma', '1997-11-10', 'Empleado'),
+(1088328484, 1995, 'Nicolas', NULL, 'Cardona', 'Montaño', '1995-08-03', 'Empleado'),
+(1088331292, 1995, 'Luis', 'Alberto', 'Borrero', 'Velez', '1995-11-15', 'Empleado'),
+(1088333977, 1996, 'Aldair', NULL, 'Bernal', 'Betancour', '1996-03-29', 'Empleado'),
+(1090337309, 1994, 'Jhon', 'Alexander', 'Zapata', 'Trejos', '1994-12-15', 'Empleado'),
+(1093221692, 1993, 'Richard', 'Andres', 'Murillo', 'Arboleda', '1993-08-09', 'Empleado'),
+(1093226665, 1996, 'Alejandro', NULL, 'Escobar', 'Valencia', '1996-05-21', 'Empleado'),
+(1112777358, 1992, 'Jose', 'Alejandro', 'Cardona', 'Valdes', '1992-10-16', 'Empleado'),
+(1112778553, 1993, 'Dubel', 'Fernando', 'Giraldo', 'Duque', '1993-03-30', 'Administrador');
 
 -- --------------------------------------------------------
 

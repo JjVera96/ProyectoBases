@@ -39,12 +39,12 @@
 		</div>
 	</header>
 	<section>
-		<div id='menuInsertar'>
+		<div id='menuInsertarRecortado'>
 			<div id='opcionRecortada'> 
 			<article>
 			<nav>
 				<ol>
-				<li><a href="">Medicamento</a></li>
+				<li><a href="insertarMedicamento.php">Medicamento</a></li>
 				</ol>
 			</nav>
 			</article>
@@ -53,7 +53,7 @@
 			<article>
 			<nav>
 				<ol>
-				<li><a href="">Empleado</a></li>
+				<li><a href="insertarEmpleado.php">Empleado</a></li>
 				</ol>
 			</nav>
 			</article>
@@ -62,7 +62,7 @@
 			<article>
 			<nav>
 				<ol>
-				<li><a href="">Proveedor</a></li>
+				<li><a href="insertarProveedor.php">Proveedor</a></li>
 				</ol>
 			</nav>
 			</article>
@@ -100,8 +100,8 @@
 				<option value="">Selecciona si es necesaria la formula</option>
 				<option value="si">Sí</option>
 				<option value="no">No</option>
-			</select><br><br><br><br>
-			<br><input type="submit" value="Enviar Datos" name="btnSumbit"><br>
+			</select><br>
+			<br><input type="submit" value="Enviar Datos" id="btnSubmit"><br>
 		</form>
 		</div>
 	</section>
