@@ -163,3 +163,13 @@ select:focus{
 	background: rgba(255,255,255,.95);
 	color: #0080FF;
 }
+
+#Bien{
+	text-align: center;
+	color: green;
+}
+
+#Error{
+	text-align: center;
+	color: red;
+}

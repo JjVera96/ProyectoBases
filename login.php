@@ -30,7 +30,7 @@
 	if(isset($_POST["btnSubmit"]) and isset($_POST["Codigo"]) and isset($_POST["Contra"])){
 			$usuario = $_POST["Codigo"];
 			$pass = $_POST["Contra"];
-			$consulta = mysqli_query($conexion, "SELECT Codigo, Contra, Cargo, Primer_Nombre, Primer_Apellido FROM personal WHERE Codigo = $usuario and Contra = $pass");
+			$consulta = mysqli_query($conexion, "SELECT Codigo, Contra, Cargo, Primer_Nombre, Primer_Apellido FROM personal WHERE Codigo = '$usuario' and Contra = '$pass'");
 		
 		if(!empty($consulta)){
 			while($result = mysqli_fetch_row($consulta)){

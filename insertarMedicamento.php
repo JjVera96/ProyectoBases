@@ -84,7 +84,12 @@
 			<label><br>Presentacion</label>	
 			<input type="text" name="Presentacion" id="Presentacion" placeholder="Presentacion" required>
 			<label>Tipo</label>
-			<input type="text" name="Tipo" id="Tipo" placeholder="Capsula,ampolla,etc." required>
+			<select name="formula" id="formula">
+				<option value="">Tipo de Medicamento</option>
+				<option value="ampolla">Ampolla</option>
+				<option value="pasta">Pasta</option>
+				<option value="jarabe">Jarabe</option>
+			</select>
 			<label><br>Fecha de Vencimiento<br></label>
 			<input type="date" name="fechaVen" id="fechaVen" placeholder="aaaa-mm-dd" required>
 			<label><br>Precio<br></label>

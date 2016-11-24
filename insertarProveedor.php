@@ -76,15 +76,32 @@
 			<h2>Nuevo Proveedor</h2>
 			</hgroup>
 		</header>
-		<form action="insertarProveedor.php" method="post">
+		<form action="insertarProveedor.php" method="get">
 			<label>Codigo<br></label>
 			<input type="number" name="Codigo" id="Codigo" placeholder="Codigo Proveedor" required>
 			<label><br>Nombre Proveedor<br></label>
 			<input type="text" name="Nombre" id="Nombre" placeholder="Nombre Proveedor"><br>
-			<br><input type="submit" value="Enviar Datos" id="btnSubmit"><br>
+			<br><input type="submit" value="Enviar Datos" name="btnSubmit" id="btnSubmit"><br>
 		</form>
 		</div>
 	</section>
 </div>
+<?php
+	require("conexion.php");
+	if(isset($_GET["btnSubmit"])){
+		if(isset($_GET["Codigo"]) and isset($_GET["Nombre"])){
+			$codprov = $_GET["Codigo"];
+			$nomprov = $_GET["Nombre"];
+			$consulta = "INSERT INTO proveedor (Codigo, Nombre) VALUES ('$codprov', '$nomprov')";
+			$result = mysqli_query($conexion, $consulta);
+		}
+	}
+
+	if($result==false){
+		echo "<h1 id='Error'>Error en el ingreso de datos</h1>";
+	}else{
+		echo "<h1 id='Bien'>Registro guardado</h1>";
+	}
+?>
 </body>
 </html>
