@@ -80,7 +80,7 @@
 		<label>Primer Nombre</label>
 		<input type="text" name="pnom" id="pnom" placeholder="Primer Nombre" required>
 		<label>Segundo Nombre</label>
-		<input type="text" name="snom" id="snom" placeholder="Segundo Nombre" required>
+		<input type="text" name="snom" id="snom" placeholder="Segundo Nombre">
 		<label><br>Primer Apellido</label>
 		<input type="text" name="pape" id="pape" placeholder="Primer Apellido" required>
 		<label>Segundo Apellido</label>
@@ -104,7 +104,6 @@
 </div>
 <?php  
 	require("conexion.php");
-
 	if(isset($_POST["btnSubmit"])){
 		if(isset($_POST["pnom"]) and isset($_POST["snom"]) and isset($_POST["pape"]) and isset($_POST["sape"]) and isset($_POST["fechanac"]) and isset($_POST["cargo"]) and isset($_POST["codigo"]) and isset($_POST["pass"])){
 			$pnemp = $_POST["pnom"];
@@ -120,12 +119,13 @@
 
 			$result = mysqli_query($conexion, $consulta);
 		}
-	}
 
-	if($result==false){
-		echo "<h1 id='Error'>Error en el ingreso de datos</h1>";
-	}else{
-		echo "<h1 id='Bien'>Registro guardado</h1>";
+
+		if($result==false){
+			echo "<h1 id='Error'>Error en el ingreso de datos</h1>";
+		}else{
+			echo "<h1 id='Bien'>Registro guardado</h1>";
+		}
 	}
 ?>
 </body>

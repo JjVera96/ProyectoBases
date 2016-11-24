@@ -73,22 +73,27 @@
 		<div id="formInsertar">
 		<header>
 			<hgroup>
-			<h2>Nuevo Medicamento</h2>
+			<h2>Nuevo Producto</h2>
 			</hgroup>
 		</header>
 		<form action="insertarMedicamento.php" method="post">
 			<label>Nombre Medicamento</label>
-			<input type="text" name="NombreMed" id="NombreMed" placeholder="Nombre Medicamento" required>
+			<input type="text" name="NombreMed" id="NombreMed" placeholder="Nombre Producto" required>
 			<label>Nombre Fabricante</label>
 			<input type="text" name="NombreFab" id="NombreFab" placeholder="Nombre Fabricante">
 			<label><br>Presentacion</label>	
 			<input type="text" name="Presentacion" id="Presentacion" placeholder="Presentacion" required>
 			<label>Tipo</label>
-			<select name="formula" id="formula">
-				<option value="">Tipo de Medicamento</option>
+			<select name="Tipo" id="Tipo">
+				<option value="">Tipo de Producto</option>
 				<option value="ampolla">Ampolla</option>
 				<option value="pasta">Pasta</option>
 				<option value="jarabe">Jarabe</option>
+				<option value="condon">Condon</option>
+				<option value="pañales">Pañales</option>
+				<option value="inyeccion">Inyeccion</option>
+				<option value="vitamina">Vitamina</option>
+				<option value="utileria">Utileria</option>
 			</select>
 			<label><br>Fecha de Vencimiento<br></label>
 			<input type="date" name="fechaVen" id="fechaVen" placeholder="aaaa-mm-dd" required>
@@ -96,7 +101,7 @@
 			<input type="number" name="Precio" id="Precio" required>
 			<label><br>Disponibilidad<br></label>
 			<input type="number" name="Disp" id="Disp" placeholder="1,2,3,etc." required>			
-			<label><br>Codigo Medicamento<br></label>
+			<label><br>Codigo Producto<br></label>
 			<input type="number" name="codigo" id="codigo" placeholder="Codigo Medicamento" required>
 			<label><br>Codigo Proveedor<br></label>
 			<input type="number" name="codProv" id="codProv" placeholder="Codigo Proveedor" required>
@@ -106,10 +111,39 @@
 				<option value="si">Sí</option>
 				<option value="no">No</option>
 			</select><br>
-			<br><input type="submit" value="Enviar Datos" id="btnSubmit"><br>
+			<br><input type="submit" value="Enviar Datos" name="btnSubmit" id="btnSubmit"><br>
 		</form>
 		</div>
 	</section>
 </div>
+<?php
+	require("conexion.php");
+	if(isset($_POST["btnSubmit"])){
+		if(isset($_POST["NombreMed"]) and isset($_POST["NombreFab"]) and isset($_POST["Presentacion"]) and isset($_POST["Tipo"]) and    isset($_POST["fechaVen"]) and isset($_POST["Precio"]) and isset($_POST["codigo"]) and isset($_POST["codProv"]) and          isset($_POST["formula"]) and isset($_POST["Disp"])){
+
+			$nompro = $_POST["NombreMed"];
+			$nomfab = $_POST["NombreFab"];
+			$prepro = $_POST["Presentacion"];
+			$tipopro = $_POST["Tipo"];
+			$fevenpro = $_POST["fechaVen"];
+			$preciopro = $_POST["Precio"];
+			$codpro = $_POST["codigo"];
+			$codprov = $_POST["codProv"];
+			$forpro = $_POST["formula"];
+			$dispro = $_POST["Disp"];
+
+			$consulta = "INSERT INTO drogas (Codigo, Nombre, Fabricante, Presentacion, Tipo, Fecha_Vencimiento, Precio, Disponibilidad, Cod_Proveedor, Formula) VALUES ('$codpro', '$nompro', '$nomfab', '$prepro', '$tipopro', '$fevenpro', '$preciopro', '$dispro', '$codprov', '$forpro')";
+
+			$result = mysqli_query($conexion, $consulta);
+		}
+
+		if($result==false){
+			echo "<h1 id='Error'>Error en el ingreso de datos</h1>";
+		}else{
+			echo "<h1 id='Bien'>Registro guardado</h1>";
+		}
+	}
+
+?>
 </body>
 </html>

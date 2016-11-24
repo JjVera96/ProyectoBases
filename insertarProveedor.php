@@ -95,13 +95,14 @@
 			$consulta = "INSERT INTO proveedor (Codigo, Nombre) VALUES ('$codprov', '$nomprov')";
 			$result = mysqli_query($conexion, $consulta);
 		}
+		
+		if($result==false){
+			echo "<h1 id='Error'>Error en el ingreso de datos</h1>";
+		}else{
+			echo "<h1 id='Bien'>Registro guardado</h1>";
+		}
 	}
 
-	if($result==false){
-		echo "<h1 id='Error'>Error en el ingreso de datos</h1>";
-	}else{
-		echo "<h1 id='Bien'>Registro guardado</h1>";
-	}
 ?>
 </body>
 </html>
