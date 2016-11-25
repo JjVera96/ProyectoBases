@@ -28,8 +28,8 @@
 	require("conexion.php");
 
 	if(isset($_POST["btnSubmit"]) and isset($_POST["Codigo"]) and isset($_POST["Contra"])){
-			$usuario = $_POST["Codigo"];
-			$pass = $_POST["Contra"];
+			$usuario = mysqli_real_escape_string($conexion, $_POST["Codigo"]);
+			$pass = mysqli_real_escape_string($conexion, $_POST["Contra"]);
 			$consulta = mysqli_query($conexion, "SELECT Codigo, Contra, Cargo, Primer_Nombre, Primer_Apellido FROM personal WHERE Codigo = '$usuario' and Contra = '$pass'");
 		
 		if(!empty($consulta)){

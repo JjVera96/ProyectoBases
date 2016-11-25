@@ -39,11 +39,37 @@
 		</div>
 	</header>
 	<section>
-		<div id='textoID'>
+		<div id='menuInsertar'>
+			<div id='opcion'> 
 			<article>
-				<hgroup>
-				</hgroup>
+			<nav>
+				<ol>
+				<li><a href="">Medicamento</a></li>
+				</ol>
+				<a href=""><img src="Recursos/medicamentos.jpg" width="150" height="150"></a>
+			</nav>
 			</article>
+			</div>
+			<div id='opcion'>
+			<article>
+			<nav>
+				<ol>
+				<li><a href="">Empleado</a></li>
+				</ol>
+				<a href=""><img src="Recursos/empleado.jpg" width="150" height="150"></a>
+			</nav>
+			</article>
+			</div>
+			<div id='opcion'>
+			<article>
+			<nav>
+				<ol>
+				<li><a href="">Proveedor</a></li>
+				</ol>
+				<a href=""><img src="Recursos/proveedor.jpg" width="150" height="150"></a>
+			</nav>
+			</article>
+			</div>
 		</div>
 	</section>
 </div>

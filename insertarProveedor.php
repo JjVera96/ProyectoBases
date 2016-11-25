@@ -90,8 +90,8 @@
 	require("conexion.php");
 	if(isset($_GET["btnSubmit"])){
 		if(isset($_GET["Codigo"]) and isset($_GET["Nombre"])){
-			$codprov = $_GET["Codigo"];
-			$nomprov = $_GET["Nombre"];
+			$codprov = mysqli_real_escape_string($conexion, $_GET["Codigo"]);
+			$nomprov = mysqli_real_escape_string($conexion, $_GET["Nombre"]);
 			$consulta = "INSERT INTO proveedor (Codigo, Nombre) VALUES ('$codprov', '$nomprov')";
 			$result = mysqli_query($conexion, $consulta);
 		}

@@ -121,16 +121,16 @@
 	if(isset($_POST["btnSubmit"])){
 		if(isset($_POST["NombreMed"]) and isset($_POST["NombreFab"]) and isset($_POST["Presentacion"]) and isset($_POST["Tipo"]) and    isset($_POST["fechaVen"]) and isset($_POST["Precio"]) and isset($_POST["codigo"]) and isset($_POST["codProv"]) and          isset($_POST["formula"]) and isset($_POST["Disp"])){
 
-			$nompro = $_POST["NombreMed"];
-			$nomfab = $_POST["NombreFab"];
-			$prepro = $_POST["Presentacion"];
-			$tipopro = $_POST["Tipo"];
-			$fevenpro = $_POST["fechaVen"];
-			$preciopro = $_POST["Precio"];
-			$codpro = $_POST["codigo"];
-			$codprov = $_POST["codProv"];
-			$forpro = $_POST["formula"];
-			$dispro = $_POST["Disp"];
+			$nompro = mysqli_real_escape_string($conexion, $_POST["NombreMed"]);
+			$nomfab = mysqli_real_escape_string($conexion, $_POST["NombreFab"]);
+			$prepro = mysqli_real_escape_string($conexion, $_POST["Presentacion"]);
+			$tipopro = mysqli_real_escape_string($conexion, $_POST["Tipo"]);
+			$fevenpro = mysqli_real_escape_string($conexion, $_POST["fechaVen"]);
+			$preciopro = mysqli_real_escape_string($conexion, $_POST["Precio"]);
+			$codpro = mysqli_real_escape_string($conexion, $_POST["codigo"]);
+			$codprov = mysqli_real_escape_string($conexion, $_POST["codProv"]);
+			$forpro = mysqli_real_escape_string($conexion, $_POST["formula"]);
+			$dispro = mysqli_real_escape_string($conexion, $_POST["Disp"]);
 
 			$consulta = "INSERT INTO drogas (Codigo, Nombre, Fabricante, Presentacion, Tipo, Fecha_Vencimiento, Precio, Disponibilidad, Cod_Proveedor, Formula) VALUES ('$codpro', '$nompro', '$nomfab', '$prepro', '$tipopro', '$fevenpro', '$preciopro', '$dispro', '$codprov', '$forpro')";
 

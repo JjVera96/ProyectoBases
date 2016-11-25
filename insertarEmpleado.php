@@ -106,14 +106,14 @@
 	require("conexion.php");
 	if(isset($_POST["btnSubmit"])){
 		if(isset($_POST["pnom"]) and isset($_POST["snom"]) and isset($_POST["pape"]) and isset($_POST["sape"]) and isset($_POST["fechanac"]) and isset($_POST["cargo"]) and isset($_POST["codigo"]) and isset($_POST["pass"])){
-			$pnemp = $_POST["pnom"];
-			$snemp = $_POST["snom"];
-			$paemp = $_POST["pape"];
-			$saemp = $_POST["sape"];
-			$fnemp = $_POST["fechanac"];
-			$cemp = $_POST["cargo"];
-			$codemp = $_POST["codigo"];
-			$passemp = $_POST["pass"];
+			$pnemp = mysqli_real_escape_string($conexion, $_POST["pnom"]);
+			$snemp = mysqli_real_escape_string($conexion, $_POST["snom"]);
+			$paemp = mysqli_real_escape_string($conexion, $_POST["pape"]);
+			$saemp = mysqli_real_escape_string($conexion, $_POST["sape"]);
+			$fnemp = mysqli_real_escape_string($conexion, $_POST["fechanac"]);
+			$cemp = mysqli_real_escape_string($conexion, $_POST["cargo"]);
+			$codemp = mysqli_real_escape_string($conexion, $_POST["codigo"]);
+			$passemp = mysqli_real_escape_string($conexion, $_POST["pass"]);
 
 			$consulta = "INSERT INTO personal (Codigo, Contra, Primer_Nombre, Segundo_Nombre, Primer_Apellido, Segundo_Apellido, Fecha_Nacimiento, Cargo) VALUES ('$codemp', '$passemp', '$pnemp', '$snemp', '$paemp', '$saemp', '$fnemp', '$cemp')";
 
