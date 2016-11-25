@@ -94,9 +94,9 @@
 			<option value="Empleado">Empleado</option>
 		</select>
 		<label><br>Codigo</label>
-		<input type="number" name="codigo" id="codigo" placeholder="Codigo" required>
+		<input type="number" name="codigo" id="codigo" placeholder="Codigo" min = "0" required>
 		<label><br>Contraseña</label>
-		<input type="number" name="pass" id="pass" placeholder="Contraseña" required><br><br>
+		<input type="password" name="pass" id="pass" placeholder="Contraseña" required><br><br>
 		<input type="submit" value="Enviar Datos" name="btnSubmit" id="btnSubmit">
 		</form>
 		</div>

@@ -98,13 +98,13 @@
 			<label><br>Fecha de Vencimiento<br></label>
 			<input type="date" name="fechaVen" id="fechaVen" placeholder="aaaa-mm-dd" required>
 			<label><br>Precio<br></label>
-			<input type="number" name="Precio" id="Precio" required>
+			<input type="number" name="Precio" min="0" id="Precio" required>
 			<label><br>Disponibilidad<br></label>
-			<input type="number" name="Disp" id="Disp" placeholder="1,2,3,etc." required>			
+			<input type="number" name="Disp" id="Disp" min="0" placeholder="1,2,3,etc." required>			
 			<label><br>Codigo Producto<br></label>
-			<input type="number" name="codigo" id="codigo" placeholder="Codigo Medicamento" required>
+			<input type="number" name="codigo" id="codigo" min="0" placeholder="Codigo Medicamento" required>
 			<label><br>Codigo Proveedor<br></label>
-			<input type="number" name="codProv" id="codProv" placeholder="Codigo Proveedor" required>
+			<input type="number" name="codProv" id="codProv" min="0" placeholder="Codigo Proveedor" required>
 			<label><br>¿Necesita formula?</label><br>
 			<select name="formula" id="formula">
 				<option value="">Selecciona si es necesaria la formula</option>

@@ -78,7 +78,7 @@
 		</header>
 		<form action="insertarProveedor.php" method="get">
 			<label>Codigo<br></label>
-			<input type="number" name="Codigo" id="Codigo" placeholder="Codigo Proveedor" required>
+			<input type="number" name="Codigo" id="Codigo" min="0" placeholder="Codigo Proveedor" required>
 			<label><br>Nombre Proveedor<br></label>
 			<input type="text" name="Nombre" id="Nombre" placeholder="Nombre Proveedor"><br>
 			<br><input type="submit" value="Enviar Datos" name="btnSubmit" id="btnSubmit"><br>
