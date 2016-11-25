@@ -38,7 +38,63 @@
 		</div>
 	</header>
 	<section>
+		<div id="formBuscar">
+		<header>
+			<hgroup>
+			<h2>Buscar Producto</h2>
+			</hgroup>
+		</header>
+		<form action="buscar.php" method="get">
+			<label>Nombre Producto<br></label>
+			<input type="text" name="Nombre" id="Nombre" placeholder="Nombre Producto" required>
+			<br><input type="submit" value="Buscar" name="btnSubmit" id="btnSubmit"><br>
+		</form>
+		</div>
 	</section>
 </div>
+<?php
+	require("conexion.php");
+	if(isset($_GET["btnSubmit"])){
+		if(isset($_GET["Nombre"])){
+			$nomprod = $_GET["Nombre"];
+			$consulta = "SELECT Codigo, Nombre, Fabricante, Presentacion, Tipo, Fecha_Vencimiento, Precio, Disponibilidad, Formula  FROM drogas WHERE Nombre='$nomprod'";
+			$result = mysqli_query($conexion, $consulta);
+		}
+		
+		if($result==false){
+			echo "<h1 id='Error'>Error en la busqueda del producto</h1>";
+		}else{
+			if($result->num_rows == 0){
+				echo "<h1 id='Error'>No se encuentra el producto</h1>";
+			}
+			else {				
+				echo "<h1 id='Bien'>Busqueda Satisfactoria</h1>";
+				echo"<table><tr><td>";
+				echo"Codigo</td><td>";
+				echo"Nombre</td><td>";
+				echo"Fabricante</td><td>";
+				echo"Presentacion</td><td>";
+				echo"Tipo</td><td>";
+				echo"Fecha de Vencimiento</td><td>";
+				echo"Precio</td><td>";
+				echo"Disponibilidad</td><td>";
+				echo"Formula<tr></td><td><tr>";
+				while($fila=mysqli_fetch_row($result)){
+					echo "<tr><td>";
+					echo "$fila[0] </td><td>";
+					echo "$fila[1] </td><td>";
+					echo "$fila[2] </td><td>";
+					echo "$fila[3] </td><td>";
+					echo "$fila[4] </td><td>";
+					echo "$fila[5] </td><td>";
+					echo "$fila[6] </td><td>";
+					echo "$fila[7] </td><td>";
+					echo "$fila[8] </td></td></tr>";
+				}
+				echo "</table>";
+		}
+		}
+	}
+?>
 </body>
 </html>
