@@ -55,11 +55,11 @@
 
 			if(!empty($result)){
 				echo "<table><tr><td>";
-				echo "<h3 id='titleTable'>Codigo</h3></td><td>";	
-				echo "<h3 id='titleTable'>Nombre</h3></td><td>";
-				echo "<h3 id='titleTable'>Fabricante</h3></td><td>";
-				echo "<h3 id='titleTable'>Precio</h3></td><td>";
-				echo "<h3 id='titleTable'>Disponibilidad</h3></td><tr>";
+				echo "<h3>Codigo</h3></td><td>";	
+				echo "<h3>Nombre</h3></td><td>";
+				echo "<h3>Fabricante</h3></td><td>";
+				echo "<h3>Precio</h3></td><td>";
+				echo "<h3>Disponibilidad</h3></td><tr>";
 				while($fila = mysqli_fetch_row($result)){
 					echo "<tr><td>";
 					echo "$fila[0] </td><td>";

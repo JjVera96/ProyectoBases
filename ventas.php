@@ -84,6 +84,7 @@
 					$disponibilidad= mysqli_query($conexion,$consulta2);
 					while($row_fin=mysqli_fetch_row($disponibilidad)){
 						$disponibilidad_new= $row_fin[0]-$canprod;
+						echo $disponibilidad_new;
 						$modificar="UPDATE drogas SET Disponibilidad='$disponibilidad_new' WHERE Nombre='$nomprod'";
 						$result= mysqli_query($conexion,$modificar);
 						echo "Procesado Realizaco con éxito";

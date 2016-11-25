@@ -69,16 +69,16 @@
 			}
 			else {				
 				echo "<h1 id='Bien'>Busqueda Satisfactoria</h1>";
-				echo"<table><tr><td>";
-				echo"Codigo</td><td>";
-				echo"Nombre</td><td>";
-				echo"Fabricante</td><td>";
-				echo"Presentacion</td><td>";
-				echo"Tipo</td><td>";
-				echo"Fecha de Vencimiento</td><td>";
-				echo"Precio</td><td>";
-				echo"Disponibilidad</td><td>";
-				echo"Formula<tr></td><td><tr>";
+				echo "<table><tr><td>";
+				echo "<h3>Codigo</h3></td><td>";
+				echo "<h3>Nombre</h3></td><td>";
+				echo "<h3>Fabricante</h3></td><td>";
+				echo "<h3>Presentacion</h3></td><td>";
+				echo "<h3>Tipo</h3></td><td>";
+				echo "<h3>Fecha de Vencimiento</h3></td><td>";
+				echo "<h3>Precio</h3></td><td>";
+				echo "<h3>Disponibilidad</h3></td><td>";
+				echo "<h3>Formula</h3><tr></td><tr>";
 				while($fila=mysqli_fetch_row($result)){
 					echo "<tr><td>";
 					echo "$fila[0] </td><td>";

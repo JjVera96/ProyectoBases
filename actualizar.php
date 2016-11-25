@@ -40,11 +40,21 @@
 	</header>
 	<section>
 		<div id='menuInsertar'>
+			<div id='opcion'>
+			<article>
+			<nav>
+				<ol>
+				<li><a href="">Proveedor</a></li>
+				</ol>
+				<a href=""><img src="Recursos/proveedor.jpg" width="150" height="150"></a>
+			</nav>
+			</article>
+			</div>
 			<div id='opcion'> 
 			<article>
 			<nav>
 				<ol>
-				<li><a href="">Medicamento</a></li>
+				<li><a href="">Producto</a></li>
 				</ol>
 				<a href=""><img src="Recursos/medicamentos.jpg" width="150" height="150"></a>
 			</nav>
@@ -57,16 +67,6 @@
 				<li><a href="">Empleado</a></li>
 				</ol>
 				<a href=""><img src="Recursos/empleado.jpg" width="150" height="150"></a>
-			</nav>
-			</article>
-			</div>
-			<div id='opcion'>
-			<article>
-			<nav>
-				<ol>
-				<li><a href="">Proveedor</a></li>
-				</ol>
-				<a href=""><img src="Recursos/proveedor.jpg" width="150" height="150"></a>
 			</nav>
 			</article>
 			</div>

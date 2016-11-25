@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>insertar - Droguerias FERJO</title>
+	<title>eliminar Empleado - Droguerias FERJO</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Ranga" rel="stylesheet">		
@@ -39,39 +39,65 @@
 		</div>
 	</header>
 	<section>
-		<div id='menuInsertar'>
-			<div id='opcion'>
+		<div id='menuInsertarRecortado'>
+			<div id='opcionRecortada'> 
 			<article>
 			<nav>
 				<ol>
-				<li><a href="insertarEmpleado.php">Empleado</a></li>
+				<li><a href="eliminarMedicamento.php">Medicamento</a></li>
 				</ol>
-				<a href="insertarEmpleado.php"><img src="Recursos/empleado.jpg" width="150" height="150"></a>
 			</nav>
 			</article>
 			</div>
-			<div id='opcion'>
+			<div id='opcionRecortada'>
 			<article>
 			<nav>
 				<ol>
-				<li><a href="insertarProveedor.php">Proveedor</a></li>
+				<li><a href="eliminarEmpleado.php">Empleado</a></li>
 				</ol>
-				<a href="insertarProveedor.php"><img src="Recursos/proveedor.jpg" width="150" height="150"></a>
 			</nav>
 			</article>
 			</div>
-			<div id='opcion'> 
+			<div id='opcionRecortada'>
 			<article>
 			<nav>
 				<ol>
-				<li><a href="insertarMedicamento.php">Producto</a></li>
+				<li><a href="eliminarProv.php">Proveedor</a></li>
 				</ol>
-				<a href="insertarMedicamento.php"><img src="Recursos/medicamentos.jpg" width="150" height="150"></a>
 			</nav>
 			</article>
 			</div>
 		</div>
 	</section>
+	<section>
+		<div id="formInsertar">
+		<header>
+			<hgroup>
+			<h2>Eliminar Empleado</h2>
+			</hgroup>
+		</header>
+		<form action="eliminarEmpleado.php" method="post">
+			<label><br>Codigo Empleado<br></label>
+			<input type="number" name="codEmp" id="codEmp" min="0" placeholder="Codigo Empleado" required>
+			<br><input type="submit" value="Enviar Datos" name="btnSubmit" id="btnSubmit"><br>
+		</form>
+		</div>
+	</section>
 </div>
+<?php
+	require("conexion.php");
+	if(isset($_POST["btnSubmit"])){
+		if(isset($_POST["codEmp"])){
+			$cod = mysqli_real_escape_string($conexion, $_POST["codEmp"]);
+			$consulta = "DELETE FROM personal WHERE Codigo = $cod";
+			$result = mysqli_query($conexion, $consulta);
+			if(mysqli_affected_rows($conexion)){
+				echo "<h1 id='Bien'>Empleado Eliminado Correctamente</h1>";
+			}else{
+				echo "<h1 id='Error'>Empleado Inexistente</h1>";
+			}
+		}
+	}
+?>
 </body>
 </html>
