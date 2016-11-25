@@ -41,6 +41,17 @@
 			require("conexion.php");
 			$consulta = "SELECT Codigo, Nombre, Fabricante, Precio, Disponibilidad FROM drogas";
 			$result = mysqli_query($conexion, $consulta);
+			$tamano_paginas = 10;
+			if(isset($_GET["pagina"])){				
+				$pagina = $_GET["pagina"];
+			}else{
+				$pagina = 1;
+			}
+			$numfilas = mysqli_num_rows($result);
+			$totalpag = ceil($numfilas/$tamano_paginas);
+			$desde = ($pagina -1)*$tamano_paginas;
+			$consulta_limite ="SELECT Codigo, Nombre, Fabricante, Precio, Disponibilidad FROM drogas LIMIT $desde, $tamano_paginas";
+			$result = mysqli_query($conexion, $consulta_limite);
 
 			if(!empty($result)){
 				echo "<table><tr><td>";
@@ -60,6 +71,13 @@
 				echo "</table>";
 			}else{
 				echo "<h1 id = 'Error'>No hay drogas en el inventario</h1>";
+			}
+		?>
+		</div>
+		<div id='Paginacion'>
+		<?php
+			for($i = 1; $i <= $totalpag; $i++){
+				echo "<a href='?pagina=" . $i . "'>" . $i . "</a>  ";
 			}
 		?>
 		</div>
