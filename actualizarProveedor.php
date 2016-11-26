@@ -44,7 +44,7 @@
 			<article>
 			<nav>
 				<ol>
-				<li><a href="actualizarProducto.php">Medicamento</a></li>
+				<li><a href="actualizarMedicamento.php">Medicamento</a></li>
 				</ol>
 			</nav>
 			</article>

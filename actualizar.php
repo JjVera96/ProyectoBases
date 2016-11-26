@@ -46,7 +46,7 @@
 				<ol>
 				<li><a href="actualizarProveedor.php">Proveedor</a></li>
 				</ol>
-				<a href="actualizarMedicamento.php"><img src="Recursos/proveedor.jpg" width="150" height="150"></a>
+				<a href="actualizarProveedor.php"><img src="Recursos/proveedor.jpg" width="150" height="150"></a>
 			</nav>
 			</article>
 			</div>
@@ -54,9 +54,9 @@
 			<article>
 			<nav>
 				<ol>
-				<li><a href="actualizarProducto.php">Producto</a></li>
+				<li><a href="actualizarMedicamento.php">Producto</a></li>
 				</ol>
-				<a href="actualizarProducto.php"><img src="Recursos/medicamentos.jpg" width="150" height="150"></a>
+				<a href="actualizarMedicamento.php"><img src="Recursos/medicamentos.jpg" width="150" height="150"></a>
 			</nav>
 			</article>
 			</div>
@@ -64,7 +64,7 @@
 			<article>
 			<nav>
 				<ol>
-				<li><a href="actualizaEmpleado.php">Empleado</a></li>
+				<li><a href="actualizarEmpleado.php">Empleado</a></li>
 				</ol>
 				<a href="actualizarEmpleado.php"><img src="Recursos/empleado.jpg" width="150" height="150"></a>
 			</nav>
