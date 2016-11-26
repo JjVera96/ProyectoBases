@@ -54,12 +54,17 @@
 			$result = mysqli_query($conexion, $consulta_limite);
 
 			if(!empty($result)){
-				echo "<table><tr><td>";
-				echo "<h3>Codigo</h3></td><td>";	
-				echo "<h3>Nombre</h3></td><td>";
-				echo "<h3>Fabricante</h3></td><td>";
-				echo "<h3>Precio</h3></td><td>";
-				echo "<h3>Disponibilidad</h3></td><tr>";
+				echo "<table>";
+				echo "<thead>";
+				echo "<tr>";
+				echo "<th>Codigo</th>";	
+				echo "<th>Nombre</th>";
+				echo "<th>Fabricante</th>";
+				echo "<th>Precio</th>";
+				echo "<th>Disponibilidad</th>";
+				echo "<tr>";
+				echo "</thead>";
+				echo "<tbody>";
 				while($fila = mysqli_fetch_row($result)){
 					echo "<tr><td>";
 					echo "$fila[0] </td><td>";
@@ -68,6 +73,7 @@
 					echo "$fila[3] </td><td>";
 					echo "$fila[4]</td></td></tr>";
 				}
+				echo "</tbody>";
 				echo "</table>";
 			}else{
 				echo "<h1 id = 'Error'>No hay drogas en el inventario</h1>";

@@ -101,7 +101,21 @@ input{
 }
 
 input:focus{
-	outline-color: rgba(0,0,0,0);
+	background: rgba(255,255,255,.95);
+	color: #0080FF;
+}
+
+button{
+	font-weight: bold;
+	border: none;
+	margin: 0 auto;
+	margin-top: 5px;
+	border-radius: 7px;
+	height: 40px;
+	background-color: #434141;
+}
+
+button:focus{
 	background: rgba(255,255,255,.95);
 	color: #0080FF;
 }

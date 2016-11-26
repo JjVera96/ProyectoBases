@@ -69,16 +69,21 @@
 			}
 			else {				
 				echo "<h1 id='Bien'>Busqueda Satisfactoria</h1>";
-				echo "<table><tr><td>";
-				echo "<h3>Codigo</h3></td><td>";
-				echo "<h3>Nombre</h3></td><td>";
-				echo "<h3>Fabricante</h3></td><td>";
-				echo "<h3>Presentacion</h3></td><td>";
-				echo "<h3>Tipo</h3></td><td>";
-				echo "<h3>Fecha de Vencimiento</h3></td><td>";
-				echo "<h3>Precio</h3></td><td>";
-				echo "<h3>Disponibilidad</h3></td><td>";
-				echo "<h3>Formula</h3><tr></td><tr>";
+				echo "<table>";
+				echo "<thead>";
+				echo "<tr>";
+				echo "<th>Codigo</th>";
+				echo "<th>Nombre</th>";
+				echo "<th>Fabricante</th>";
+				echo "<th>Presentacion</th>";
+				echo "<th>Tipo</th>";
+				echo "<th>Fecha de Vencimiento</th>";
+				echo "<th>Precio</th>";
+				echo "<th>Disponibilidad</th>";
+				echo "<th>Formula</th>";
+				echo "<tr>";
+				echo "</thead>";
+				echo "<tbody>";
 				while($fila=mysqli_fetch_row($result)){
 					echo "<tr><td>";
 					echo "$fila[0] </td><td>";
@@ -91,6 +96,7 @@
 					echo "$fila[7] </td><td>";
 					echo "$fila[8] </td></td></tr>";
 				}
+				echo "</tbody>";
 				echo "</table>";
 		}
 		}

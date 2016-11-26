@@ -53,6 +53,7 @@
 					<tr>
 						<th>Codigo</th>
 						<th>Cantidad</th>
+						<th>Formula</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -67,11 +68,20 @@
 								<input class="form-control validate[required]" name="cantPro[]"" placeholder="Cantidad"/>
 							</div>
 						</td>
+						<td>
+							<div class="form-group formulas">
+								<select class="form-control validate[required]"" name="forPro[]">
+									<option value="">Trajo Formula</option>
+									<option value="si">Si</option>
+									<option value="no">No</option>
+								</select>
+							</div>
+						</td>
 					</tr>
 				</tbody>
 			</table>
 			<button id="btnsubmit" type="submit" class="btn btn-success">Vender</button>
-			<button id="btnadd" class="btn btn-primary">Agregar Nuevo</button>
+			<button id="btnadd" class="btn btn-primary">Agregar Producto</button>
 			</form>
 		</div>
 	</div>
@@ -84,7 +94,7 @@ var count = 0;
 $(function(){
 	$(document).on("click", "#btnadd", function(event){
 		count++;
-		$('#tablaProd tr:last').after('<tr><td><div class="form-group codigos"><input class="form-control validate[required]" name="codPro[]" placeholder="Codigo Producto"/></div></td><td><div class="form-group cantidades"><input class="form-control validate[required]" name="cantPro[]" placeholder="Cantidad"/></div></td></tr>');
+		$('#tablaProd tr:last').after('<tr><td><div class="form-group codigos"><input class="form-control validate[required]" name="codPro[]" placeholder="Codigo Producto"/></div></td><td><div class="form-group cantidades"><input class="form-control validate[required]" name="cantPro[]" placeholder="Cantidad"/></div></td></td><td><div class="form-group formulas"><select class="form-control validate[required]"" name="forPro[]"><option value="">Trajo Formula</option><option value="si">Si</option><option value="no">No</option></select></div></td></tr>');
 		event.preventDefault();
 	});
 

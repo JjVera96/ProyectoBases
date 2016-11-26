@@ -120,7 +120,6 @@
 			$result = mysqli_query($conexion, $consulta);
 		}
 
-
 		if($result==false){
 			echo "<h1 id='Error'>Error en el ingreso de datos</h1>";
 		}else{
