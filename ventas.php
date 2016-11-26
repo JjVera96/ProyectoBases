@@ -70,8 +70,8 @@
 					</tr>
 				</tbody>
 			</table>
-			<button id="btnadd" class="btn btn-primary">Agregar Nuevo</button>
 			<button id="btnsubmit" type="submit" class="btn btn-success">Vender</button>
+			<button id="btnadd" class="btn btn-primary">Agregar Nuevo</button>
 			</form>
 		</div>
 	</div>
