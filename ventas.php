@@ -49,54 +49,37 @@
 			<input type="text" name="Nombre" id="Nombre" placeholder="Nombre Producto" required>
 			<br><label>Cantidad<br></label>
 			<input type="number" name="Cantidad" id="Cantidad" placeholder="Cantidad a vender" required>
-			<br><input type="submit" value="Total" name="btnTotal" id="btnSubmit"><br>
-
-			<?php
-			require("conexion.php");
-			if(isset($_GET["btnTotal"])){
-				if(isset($_GET["Cantidad"]) and isset($_GET["Nombre"])){
-					$canprod = $_GET["Cantidad"];
-					$nomprod = $_GET["Nombre"];
-					$consulta = "SELECT Precio FROM drogas WHERE Nombre='$nomprod'";
-					$precioprod = mysqli_query($conexion, $consulta);
-				}
-				
-				if($precioprod==false){
-					echo "<h1 id='Error'>Error en la busqueda del producto</h1>";
-				}else{
-					if($precioprod->num_rows == 0){
-						echo "<h1 id='Error'>No se encuentra el producto</h1>";
-					}
-					else {
-						while ($row=mysqli_fetch_row($precioprod)){
-						$total=	$row[0]*$canprod;			
-						echo "<h1 id='Bien'>$total</h1>";
-					}
-					}
-					}
-					
-				?>
-				<input type="submit" value="Vender" name="btnSubmit" id="btnSubmit"><br>
-
-				<?php
-				if (isset($_GET["btnSubmit"])){
-					$consulta2 = "SELECT Disponibilidad FROM drogas WHERE Nombre='$nomprod'";
-					$disponibilidad= mysqli_query($conexion,$consulta2);
-					while($row_fin=mysqli_fetch_row($disponibilidad)){
-						$disponibilidad_new= $row_fin[0]-$canprod;
-						echo $disponibilidad_new;
-						$modificar="UPDATE drogas SET Disponibilidad='$disponibilidad_new' WHERE Nombre='$nomprod'";
-						$result= mysqli_query($conexion,$modificar);
-						echo "Procesado Realizaco con éxito";
-					}
-				}
-				}
-			?>
-
+			<br><br><input type="submit" value="Vender" name="btnSubmit" id="btnSubmit"><br>
 			</form>
 		</div>
 	</section>
 </div>
 </div>
+<?php
+	require("conexion.php");
+	if (isset($_GET["btnSubmit"]) and isset($_GET["Nombre"]) and isset($_GET["Cantidad"])){
+		$nomprod = $_GET["Nombre"];
+		$canprod = $_GET["Cantidad"];
+		$consulta = "SELECT Disponibilidad FROM drogas WHERE Nombre='$nomprod'";
+		$result = mysqli_query($conexion,$consulta);
+		if($result==False){
+			echo "<h1 id='Error'> Ocurrió un error en la transacción</h1>";
+		}
+		else{
+			while($fila=mysqli_fetch_row($result)){
+					$disponibilidad_new= $fila[0]-$canprod;
+					$modificar="UPDATE drogas SET Disponibilidad='$disponibilidad_new' WHERE Nombre='$nomprod'";
+					$resultfinal= mysqli_query($conexion,$modificar);
+					if($resultfinal==False){
+						echo "<h1 id='Error'> Ocurrió un error en la transacción</h1>";
+					}
+					else{
+						echo "<h1 id='Bien'>Procesado Realizado con éxito</h1>";
+					}
+					
+				}
+			}
+	}
+?>
 </body>
 </html>
