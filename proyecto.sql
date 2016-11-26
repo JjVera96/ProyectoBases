@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 25-11-2016 a las 02:10:11
--- Versión del servidor: 5.5.24-log
--- Versión de PHP: 5.4.3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 26-11-2016 a las 20:35:02
+-- Versión del servidor: 5.7.14
+-- Versión de PHP: 5.6.25
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `proyecto`
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `drogas`
 --
 
-CREATE TABLE IF NOT EXISTS `drogas` (
+CREATE TABLE `drogas` (
   `Codigo` int(15) NOT NULL,
   `Nombre` varchar(15) NOT NULL,
   `Fabricante` varchar(15) NOT NULL,
@@ -36,8 +36,7 @@ CREATE TABLE IF NOT EXISTS `drogas` (
   `Precio` int(20) NOT NULL,
   `Disponibilidad` int(10) NOT NULL,
   `Cod_Proveedor` int(15) NOT NULL,
-  `Formula` varchar(2) DEFAULT NULL,
-  PRIMARY KEY (`Codigo`)
+  `Formula` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -45,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `drogas` (
 --
 
 INSERT INTO `drogas` (`Codigo`, `Nombre`, `Fabricante`, `Presentacion`, `Tipo`, `Fecha_Vencimiento`, `Precio`, `Disponibilidad`, `Cod_Proveedor`, `Formula`) VALUES
-(1, 'Acetaminofem', 'MK', '100 mg', 'pasta', '2017-11-24', 2000, 100, 4, 'no'),
+(1, 'Acetaminofem', 'MK', '100 mg', 'pasta', '2017-11-26', 2000, 2890, 4, 'no'),
 (2, 'Aciclovir', 'MK', '800 mg', 'pasta', '2017-12-30', 500, 50, 6, 'no'),
 (3, 'Januvia', 'Jujo Laboratori', '50 mg', 'pasta', '2017-03-30', 1000, 10, 6, 'no'),
 (4, 'Ondax', 'Jujo Laboratori', '8 mg/ml', 'ampolla', '2017-05-25', 5000, 20, 1, 'si'),
@@ -63,13 +62,12 @@ INSERT INTO `drogas` (`Codigo`, `Nombre`, `Fabricante`, `Presentacion`, `Tipo`, 
 -- Estructura de tabla para la tabla `pedido`
 --
 
-CREATE TABLE IF NOT EXISTS `pedido` (
+CREATE TABLE `pedido` (
   `Cod_Personal` int(15) NOT NULL,
   `Cod_Droga` int(15) NOT NULL,
   `Fecha` date NOT NULL,
   `Cantidad` int(10) NOT NULL,
-  `Precio_Compra` int(15) NOT NULL,
-  PRIMARY KEY (`Cod_Droga`,`Cod_Personal`)
+  `Precio_Compra` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `pedido` (
 -- Estructura de tabla para la tabla `personal`
 --
 
-CREATE TABLE IF NOT EXISTS `personal` (
+CREATE TABLE `personal` (
   `Codigo` int(20) NOT NULL,
   `Contra` int(4) NOT NULL,
   `Primer_Nombre` varchar(15) NOT NULL,
@@ -86,8 +84,7 @@ CREATE TABLE IF NOT EXISTS `personal` (
   `Primer_Apellido` varchar(15) NOT NULL,
   `Segundo_Apellido` varchar(15) NOT NULL,
   `Fecha_Nacimiento` date NOT NULL,
-  `Cargo` varchar(20) NOT NULL,
-  PRIMARY KEY (`Codigo`)
+  `Cargo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -113,10 +110,9 @@ INSERT INTO `personal` (`Codigo`, `Contra`, `Primer_Nombre`, `Segundo_Nombre`, `
 -- Estructura de tabla para la tabla `proveedor`
 --
 
-CREATE TABLE IF NOT EXISTS `proveedor` (
+CREATE TABLE `proveedor` (
   `Codigo` int(15) NOT NULL,
-  `Nombre` varchar(20) NOT NULL,
-  PRIMARY KEY (`Codigo`)
+  `Nombre` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -142,15 +138,70 @@ INSERT INTO `proveedor` (`Codigo`, `Nombre`) VALUES
 -- Estructura de tabla para la tabla `venta`
 --
 
-CREATE TABLE IF NOT EXISTS `venta` (
-  `Codigo_Venta` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `venta` (
+  `Codigo_Venta` int(11) NOT NULL,
   `Cod_Personal` int(20) NOT NULL,
   `Cod_Droga` int(20) NOT NULL,
   `Cantidad` int(20) NOT NULL,
-  `Total` int(20) NOT NULL,
-  PRIMARY KEY (`Codigo_Venta`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `Total` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `venta`
+--
+
+INSERT INTO `venta` (`Codigo_Venta`, `Cod_Personal`, `Cod_Droga`, `Cantidad`, `Total`) VALUES
+(1, 1087559573, 1, 1, 2000),
+(2, 1087559573, 1, 1, 2000),
+(3, 1087559573, 1, 2, 4000),
+(4, 1087559573, 1, 1, 2000),
+(5, 1087559573, 1, 10, 20000),
+(6, 1087559573, 1, 10, 20000),
+(7, 1088016836, 1, 100, 200000);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `drogas`
+--
+ALTER TABLE `drogas`
+  ADD PRIMARY KEY (`Codigo`);
+
+--
+-- Indices de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  ADD PRIMARY KEY (`Cod_Droga`,`Cod_Personal`);
+
+--
+-- Indices de la tabla `personal`
+--
+ALTER TABLE `personal`
+  ADD PRIMARY KEY (`Codigo`);
+
+--
+-- Indices de la tabla `proveedor`
+--
+ALTER TABLE `proveedor`
+  ADD PRIMARY KEY (`Codigo`);
+
+--
+-- Indices de la tabla `venta`
+--
+ALTER TABLE `venta`
+  ADD PRIMARY KEY (`Codigo_Venta`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `venta`
+--
+ALTER TABLE `venta`
+  MODIFY `Codigo_Venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
