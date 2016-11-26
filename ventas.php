@@ -10,7 +10,10 @@
 	<title>ventas - Droguerias FerJo</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Ranga" rel="stylesheet">		
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Ranga" rel="stylesheet">
+	<script src="jquery-3.1.1.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/languages/jquery.validationEngine-es.js"></script>
 </head>
 <body>
 <div id='Contenido'>
@@ -44,42 +47,67 @@
 			<h2>Vender Producto</h2>
 			</hgroup>
 		</header>
-		<form action="ventas.php" method="get">
-			<label>Nombre Producto<br></label>
-			<input type="text" name="Nombre" id="Nombre" placeholder="Nombre Producto" required>
-			<br><label>Cantidad<br></label>
-			<input type="number" name="Cantidad" id="Cantidad" placeholder="Cantidad a vender" required>
-			<br><br><input type="submit" value="Vender" name="btnSubmit" id="btnSubmit"><br>
+		<form name="miform" id="miform" method="get">
+			<table id="tablaProd">
+				<thead>
+					<tr>
+						<th>Codigo</th>
+						<th>Cantidad</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<div class="form-group codigos">
+								<input class="form-control validate[required]" name="codPro[]" placeholder="Codigo Producto"/>
+							</div>
+						</td>
+						<td>
+							<div class="form-group cantidades">
+								<input class="form-control validate[required]" name="cantPro[]"" placeholder="Cantidad"/>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<button id="btnadd" class="btn btn-primary">Agregar Nuevo</button>
+			<button id="btnsubmit" type="submit" class="btn btn-success">Vender</button>
 			</form>
 		</div>
+	</div>
 	</section>
 </div>
-</div>
-<?php
-	require("conexion.php");
-	if (isset($_GET["btnSubmit"]) and isset($_GET["Nombre"]) and isset($_GET["Cantidad"])){
-		$nomprod = $_GET["Nombre"];
-		$canprod = $_GET["Cantidad"];
-		$consulta = "SELECT Disponibilidad FROM drogas WHERE Nombre='$nomprod'";
-		$result = mysqli_query($conexion,$consulta);
-		if($result==False){
-			echo "<h1 id='Error'> Ocurrió un error en la transacción</h1>";
-		}
-		else{
-			while($fila=mysqli_fetch_row($result)){
-					$disponibilidad_new= $fila[0]-$canprod;
-					$modificar="UPDATE drogas SET Disponibilidad='$disponibilidad_new' WHERE Nombre='$nomprod'";
-					$resultfinal= mysqli_query($conexion,$modificar);
-					if($resultfinal==False){
-						echo "<h1 id='Error'> Ocurrió un error en la transacción</h1>";
-					}
-					else{
-						echo "<h1 id='Bien'>Procesado Realizado con éxito</h1>";
-					}
-					
-				}
-			}
-	}
-?>
+
+
+<script type="text/javascript">
+var count = 0;
+$(function(){
+	$(document).on("click", "#btnadd", function(event){
+		count++;
+		$('#tablaProd tr:last').after('<tr><td><div class="form-group codigos"><input class="form-control validate[required]" name="codPro[]" placeholder="Codigo Producto"/></div></td><td><div class="form-group cantidades"><input class="form-control validate[required]" name="cantPro[]" placeholder="Cantidad"/></div></td></tr>');
+		event.preventDefault();
+	});
+
+	$( "#miform" ).submit(function( event ) {
+		var frm = $(this);
+		var formulario = $(this).serialize();
+
+	if($('#miform').validationEngine('validate')){
+		$.post( "guardar.php", formulario)
+		.done(function(data){
+			alert(data);
+			$(frm)[0].reset();
+		})
+		.fail(function() {
+        alert( "Error no pude enviar los datos" );
+		});
+  	}
+	event.preventDefault();
+	});
+});
+
+
+</script>
+
 </body>
 </html>
