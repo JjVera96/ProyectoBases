@@ -44,7 +44,7 @@ CREATE TABLE `drogas` (
 --
 
 INSERT INTO `drogas` (`Codigo`, `Nombre`, `Fabricante`, `Presentacion`, `Tipo`, `Fecha_Vencimiento`, `Precio`, `Disponibilidad`, `Cod_Proveedor`, `Formula`) VALUES
-(1, 'Acetaminofem', 'MK', '100 mg', 'pasta', '2017-11-26', 2000, 2890, 4, 'no'),
+(1, 'Acetaminofem', 'MK', '50 mg', 'pasta', '2017-12-30', 2000, 90, 6, 'no'),
 (2, 'Aciclovir', 'MK', '800 mg', 'pasta', '2017-12-30', 500, 50, 6, 'no'),
 (3, 'Januvia', 'Jujo Laboratori', '50 mg', 'pasta', '2017-03-30', 1000, 10, 6, 'no'),
 (4, 'Ondax', 'Jujo Laboratori', '8 mg/ml', 'ampolla', '2017-05-25', 5000, 20, 1, 'si'),
@@ -52,9 +52,23 @@ INSERT INTO `drogas` (`Codigo`, `Nombre`, `Fabricante`, `Presentacion`, `Tipo`, 
 (6, 'Asa', 'Jujo Laboratori', '500 mg', 'pasta', '2017-02-25', 10000, 10, 3, 'no'),
 (7, 'Plavix', 'Mk', '75 mg', 'pasta', '2018-06-25', 1500, 35, 9, 'no'),
 (8, 'Naloxona', 'Fercho Drogas', '0.4 mg/ml', 'ampolla', '2017-06-30', 5000, 20, 7, 'si'),
-(9, 'Tramadol', 'Fercho Drogas', '100 mg', 'pasta', '2018-06-05', 1200, 30, 2, 'no'),
-(10, 'Fentanyl', 'Jujo Laboratori', '50 mg/ml', 'ampolla', '2018-09-25', 1350, 25, 10, 'no'),
-(11, 'Gliclazida', 'Mk', '30 mg', 'pasta', '2016-12-21', 500, 47, 6, 'si');
+(9, 'Tramadol', 'Fercho Drogas', '100 mg', 'pasta', '2018-06-05', 1200, 20, 2, 'no'),
+(10, 'Trimetoprim', 'Jujos Laborator', '80 mg/ml', 'ampolla', '2017-01-01', 200, 100, 2, 'no'),
+(11, 'Gliclazida', 'Mk', '30 mg', 'pasta', '2016-12-21', 500, 47, 6, 'si'),
+(12, 'Ganciclovir', 'MK', '250 mg', 'pasta', '2017-09-30', 100, 250, 11, 'si'),
+(13, 'Valaciclovir', 'MK', '500 mg', 'pasta', '2018-02-20', 550, 150, 12, 'no'),
+(14, 'NetFormina', 'Siklas', '1000 mg', 'pasta', '2019-02-01', 250, 135, 10, 'si'),
+(15, 'Metotrexato', 'Virginia Compan', '5 mg/ml', 'ampolla', '2017-05-18', 350, 105, 6, 'no'),
+(16, 'Trimebutina', 'LDS', '200 mg', 'pasta', '2016-12-25', 650, 200, 3, 'no'),
+(17, 'Domperidona', 'MK', '10 mg', 'pasta', '2017-02-15', 100, 550, 12, 'no'),
+(18, 'Mesaprida', 'MK', '5 mg/ml', 'ampolla', '2019-12-12', 250, 90, 3, 'si'),
+(19, 'Fentanyl', 'SSAS', '50 mg/ml', 'ampolla', '2017-06-30', 250, 250, 9, 'si'),
+(20, 'Naloxona', 'SSAS', '0.4 mg/ml', 'ampolla', '0208-12-12', 650, 30, 10, 'si'),
+(21, 'Alopurinol', 'MK', '300 mg', 'pasta', '2017-07-25', 1200, 50, 11, 'no'),
+(22, 'Colchicino', 'Siklas', '0.4 mg', 'pasta', '2019-03-31', 750, 60, 11, 'si'),
+(23, 'Today', 'MK condons', 'Paquete 5', 'condon', '2016-12-12', 2500, 10, 11, 'no'),
+(24, 'Duo', 'MK', 'Paquete 5', 'condon', '2016-12-12', 10, 1800, 10, 'no'),
+(25, 'Winny', 'Papeles Naciona', 'Paquete 50 Tall', 'paÃ±ales', '2018-06-30', 10000, 20, 2, 'no');
 
 -- --------------------------------------------------------
 
