@@ -33,6 +33,7 @@
 						echo "<li><a href='insertar.php'>Ingresar</a></li>";
 						echo "<li><a href='eliminar.php'>Eliminar</a></li>";
 						echo "<li><a href='actualizar.php'>Actualizar</a></li>";
+						echo "<li><a href='total.php'>Total</a></li>";
 					}
 					echo "<li><a href='cerrar.php'>Cerrar</a></li>";
 					?>
